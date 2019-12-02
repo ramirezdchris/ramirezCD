@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Dao.BusesDao;
-import Modelo.BusesBean;
+import Dao.AsistenteDao;
+import Modelo.AsistenteBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,9 +21,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author christian.ramirezusa
  */
-@WebServlet(name = "BusesServlet", urlPatterns = {"/buses"})
-public class BusesServlet extends HttpServlet {
+@WebServlet(name = "AsistenteServlet", urlPatterns = {"/asistente"})
+public class AsistenteServlet extends HttpServlet {
 
+    
     RequestDispatcher rd;
     String msg;
     
@@ -56,20 +57,18 @@ public class BusesServlet extends HttpServlet {
     protected void add(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        AsistenteBean ab = new AsistenteBean(0);
+        AsistenteDao ad = new AsistenteDao();
         
-        String placa = request.getParameter("txtPlaca");
-        String marca = request.getParameter("txtMarca");
-        String modelo = request.getParameter("txtModelo");
-        int asientos = Integer.parseInt(request.getParameter("txtAsientos"));
+        String dui = request.getParameter("txtDui");
+        String nombre = request.getParameter("txtNombre");
+        String apellido = request.getParameter("txtApellido");                
         
-        bb.setPlaca(placa);
-        bb.setMarca(marca);
-        bb.setModelo(modelo);
-        bb.setAsientos(asientos);
+        ab.setDui(dui);
+        ab.setNombreAsistente(nombre);
+        ab.setApellidoAsistente(apellido);        
                 
-        if(bd.add(bb)){
+        if(ad.add(ab)){
             list(request, response);
         }
     }
@@ -77,14 +76,14 @@ public class BusesServlet extends HttpServlet {
     protected void list(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        AsistenteBean ab = new AsistenteBean(0);
+        AsistenteDao ad = new AsistenteDao();
         
-        List<BusesBean> list = bd.list();
+        List<AsistenteBean> list = ad.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/buses.jsp");
+        rd = request.getRequestDispatcher("/asistente.jsp");
         rd.forward(request, response);
         
     }
-   
+    
 }

@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Dao.BusesDao;
-import Modelo.BusesBean;
+import Dao.ChoferDao;
+import Modelo.ChoferBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,9 +21,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author christian.ramirezusa
  */
-@WebServlet(name = "BusesServlet", urlPatterns = {"/buses"})
-public class BusesServlet extends HttpServlet {
+@WebServlet(name = "ChoferServlet", urlPatterns = {"/chofer"})
+public class ChoferServlet extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     RequestDispatcher rd;
     String msg;
     
@@ -56,20 +65,20 @@ public class BusesServlet extends HttpServlet {
     protected void add(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        ChoferBean cb = new ChoferBean(0);
+        ChoferDao cd = new ChoferDao();
         
-        String placa = request.getParameter("txtPlaca");
-        String marca = request.getParameter("txtMarca");
-        String modelo = request.getParameter("txtModelo");
-        int asientos = Integer.parseInt(request.getParameter("txtAsientos"));
+        String dui = request.getParameter("txtDui");
+        String nombre = request.getParameter("txtNombre");
+        String apellido = request.getParameter("txtApellido");
+        String licencia = request.getParameter("txtLicencia");        
         
-        bb.setPlaca(placa);
-        bb.setMarca(marca);
-        bb.setModelo(modelo);
-        bb.setAsientos(asientos);
+        cb.setDui(dui);
+        cb.setNombreChofer(nombre);
+        cb.setApellidoChofer(apellido);
+        cb.setLicencia(licencia);
                 
-        if(bd.add(bb)){
+        if(cd.add(cb)){
             list(request, response);
         }
     }
@@ -77,14 +86,15 @@ public class BusesServlet extends HttpServlet {
     protected void list(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        ChoferBean cb = new ChoferBean(0);
+        ChoferDao cd = new ChoferDao();
         
-        List<BusesBean> list = bd.list();
+        List<ChoferBean> list = cd.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/buses.jsp");
+        rd = request.getRequestDispatcher("/chofer.jsp");
         rd.forward(request, response);
         
     }
-   
+    
+
 }

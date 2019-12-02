@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="../head.jsp" %>        
+        <%@include file="head.jsp" %>        
     </head>
     <body>
         <div class="modal fade" id="myModal"> 
@@ -23,7 +23,7 @@
                     </div>                        
 
                     <div class="model-body" style="padding: 1rem;">
-                        <form action="/buses?action=add" method="POST">                                
+                        <form action="buses?action=add" method="POST">                                
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">                                      
@@ -138,7 +138,7 @@
 
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <%@include file="footer.jsp" %>
 
     </body>
 </html>

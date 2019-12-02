@@ -32,14 +32,23 @@
                 <li><a href="pelicula?action=mostrar">Control</a>&nbsp;<i class="fa fa-arrows "></i></li>
                 <li><a href="pelicula?action=mostrar">Fecha</a>&nbsp;<i class="fa fa-calendar-times-o"></i></li>
             </ul>
+            
+            <li  data-toggle="collapse" data-target="#products3" class="collapsed active">
+                <a href="#"><i class="fa fa-edit fa-lg"></i>Administraci&oacute;n de Equipo de Viajes<span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="products3">
+                <li><a href="pelicula?action=mostrar">Equipos</a>&nbsp;<i class="fa fa-list"></i></li>
+                <li><a href="buseschofer?action=listas">Añadir equipos</a>&nbsp;<i class="fa fa-plus-circle"></i></li>
+                <li><a href="pelicula?action=mostrar">Editar Equipos</a>&nbsp;<i class="fa fa-pencil "></i></li>                
+            </ul>
 
             <li data-toggle="collapse" data-target="#service" class="collapsed">
                 <a href="#"><i class="fa fa-users fa-lg"></i>Equipo<span class="arrow"></span></a>
             </li>  
             <ul class="sub-menu collapse" id="service">
-                <li><a href="idioma?action=mostrar">Choferes</a> &nbsp; <i class="fa fa-id-card"></i></li>
-                <li><a href="/SA/buses.jsp">Asistentes</a> &nbsp; <i class="fa fa-hand-spock-o"></i></li>
-                <li><a href="SA/buses.jsp">Buses</a> &nbsp;<i class="fa fa-bus"></i></li>
+                <li><a href="chofer?action=list">Choferes</a> &nbsp; <i class="fa fa-id-card"></i></li>
+                <li><a href="asistente?action=list">Asistentes</a> &nbsp; <i class="fa fa-hand-spock-o"></i></li>
+                <li><a href="buses?action=list">Buses</a> &nbsp;<i class="fa fa-bus"></i></li>
             </ul>
             
             <li>
