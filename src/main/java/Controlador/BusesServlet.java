@@ -29,6 +29,7 @@ public class BusesServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("Hola");
         String action = request.getParameter("action");
         
         switch(action){

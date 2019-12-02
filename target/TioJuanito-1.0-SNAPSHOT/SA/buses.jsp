@@ -23,7 +23,7 @@
                     </div>                        
 
                     <div class="model-body" style="padding: 1rem;">
-                        <form action="buses" method="GET" autocomplete="on" class="my-3" id="agregar">                                
+                        <form action="/buses?action=add" method="POST">                                
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">                                      
@@ -65,7 +65,7 @@
                             <br>                                                                                                
                             <br>
                             <div>
-                                <button  type="submit" name="action" value="add" class="btn btn-success" onclick="return  validarAddPais();">Agregar</button>                                      
+                                <button class="btn btn-success">Agregar</button>                                      
                             </div>                                
                         </form>
 

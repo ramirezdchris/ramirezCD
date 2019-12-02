@@ -38,8 +38,8 @@
             </li>  
             <ul class="sub-menu collapse" id="service">
                 <li><a href="idioma?action=mostrar">Choferes</a> &nbsp; <i class="fa fa-id-card"></i></li>
-                <li><a href="idioma?action=mostrar">Asistentes</a> &nbsp; <i class="fa fa-hand-spock-o"></i></li>
-                <li><a href="idioma?action=mostrar">Buses</a> &nbsp;<i class="fa fa-bus"></i></li>
+                <li><a href="/SA/buses.jsp">Asistentes</a> &nbsp; <i class="fa fa-hand-spock-o"></i></li>
+                <li><a href="SA/buses.jsp">Buses</a> &nbsp;<i class="fa fa-bus"></i></li>
             </ul>
             
             <li>
