@@ -4,6 +4,7 @@
     Author     : christian.ramirezusa
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,12 +18,12 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Agregar Area</h4>
+                        <h4 class="modal-title">Agregar Buses</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>                        
 
                     <div class="model-body" style="padding: 1rem;">
-                        <form action="areas" method="POST" autocomplete="off" class="my-3" id="agregar">                                
+                        <form action="buses" method="GET" autocomplete="on" class="my-3" id="agregar">                                
                             <div class="row">
                                 <div class="col">
                                     <div class="input-group">                                      
@@ -64,7 +65,7 @@
                             <br>                                                                                                
                             <br>
                             <div>
-                                <button  type="submit" name="action" value="insert" class="btn btn-success" onclick="return  validarAddPais();">Agregar Asesor</button>                                      
+                                <button  type="submit" name="action" value="add" class="btn btn-success" onclick="return  validarAddPais();">Agregar</button>                                      
                             </div>                                
                         </form>
 
@@ -85,7 +86,7 @@
                 <div class="row"  style="margin-right: 0px;">
                     <div class="col-md-5">
                         <h1>Mantenimieto Buses</h1><br>
-                        <input type="submit" value="Agregar Nuevo Bus" name="add" class="btn btn-default btn-sm " style="float: left; height: 60px; border-radius: 15px;" data-toggle="modal" data-target="#myModal"/><br><br>
+                        <input type="submit" value="Agregar Nuevo Bus" name="add" class="btn btn-default btn-sm " style="float: left; height: 60px; border-radius: 15px; background-color: #5dc1b9;" data-toggle="modal" data-target="#myModal"/><br><br>
                     </div>
                     <div class="col-md-4">
                         
@@ -106,15 +107,15 @@
                             <th colspan="2">Acciones</th> 
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>fgdfgdfgdf</td>
-                                    <td>fgdfgdfgdf</td>
-                                    <td>fgdfgdfgdf</td>
-                                    <td>fgdfgdfgdf</td>
-                                    <td>fgdfgdfgdf</td>
-                                    <td>fgdfgdfgdf</td>
-                            <br>
+                                <c:forEach items="${list}" var="v">
+                                <tr>                                    
+                                    <td>${v.idBuses}</td>
+                                    <td>${v.placa}</td>
+                                    <td>${v.marca}</td>
+                                    <td>${v.modelo}</td>
+                                    <td>${v.asientos}</td>
                             </tr>
+                            </c:forEach>
                             </tbody>
                         </table> 
                     </div>
