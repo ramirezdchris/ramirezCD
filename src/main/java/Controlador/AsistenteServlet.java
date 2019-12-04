@@ -81,7 +81,7 @@ public class AsistenteServlet extends HttpServlet {
         
         List<AsistenteBean> list = ad.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/asistente.jsp");
+        rd = request.getRequestDispatcher("/SuperAdministrador/asistente.jsp");
         rd.forward(request, response);
         
     }

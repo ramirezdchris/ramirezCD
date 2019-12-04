@@ -5,11 +5,15 @@
  */
 package Controlador;
 
-import Dao.BusesDao;
-import Modelo.BusesBean;
+import Dao.ModalidadDao;
+import Modelo.ModalidadBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,15 +25,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author christian.ramirezusa
  */
-@WebServlet(name = "BusesServlet", urlPatterns = {"/buses"})
-public class BusesServlet extends HttpServlet {
+@WebServlet(name = "ModalidadServlet", urlPatterns = {"/modalidad"})
+public class ModalidadServlet extends HttpServlet {
 
     RequestDispatcher rd;
     String msg;
     
+    SimpleDateFormat fhora = new SimpleDateFormat("HH:mm");
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        System.out.println("Hola");
+            throws ServletException, IOException, ParseException {
         String action = request.getParameter("action");
         
         switch(action){
@@ -43,33 +48,41 @@ public class BusesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(ModalidadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(ModalidadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     protected void add(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ParseException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        ModalidadBean modab = new ModalidadBean(0);
+        ModalidadDao modah = new ModalidadDao();
         
-        String placa = request.getParameter("txtPlaca");
-        String marca = request.getParameter("txtMarca");
-        String modelo = request.getParameter("txtModelo");
-        int asientos = Integer.parseInt(request.getParameter("txtAsientos"));
+        String modalidad = request.getParameter("txtModalidad");
+        String recoger = request.getParameter("txtRecoger");
+        String dejar = request.getParameter("txtDejar");
         
-        bb.setPlaca(placa);
-        bb.setMarca(marca);
-        bb.setModelo(modelo);
-        bb.setAsientos(asientos);
+        
+        
+        modab.setModalidad(modalidad);
+        modab.setRecoger(fhora.parse(recoger));
+        modab.setDejar(fhora.parse(dejar));
                 
-        if(bd.add(bb)){
+        if(modah.add(modab)){
             list(request, response);
         }
     }
@@ -77,14 +90,14 @@ public class BusesServlet extends HttpServlet {
     protected void list(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        ModalidadBean modab = new ModalidadBean(0);
+        ModalidadDao modah = new ModalidadDao();
         
-        List<BusesBean> list = bd.list();
+        List<ModalidadBean> list = modah.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/SuperAdministrador/buses.jsp");
+        rd = request.getRequestDispatcher("/SuperAdministrador/modalidad.jsp");
         rd.forward(request, response);
         
     }
-   
+
 }

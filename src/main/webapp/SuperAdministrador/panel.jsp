@@ -21,8 +21,10 @@
                 <a href="#"><i class="fa fa-road fa-lg"></i> Administraci&oacute;n de Recorridos <span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="products">                
-                <li><a href="sala?action=mostrar">Barrio</a>&nbsp;<i class="fa fa-sitemap "></i></li>
-                <li><a href="sala?action=mostrar">Colegio</a>&nbsp;<i class="fa fa-building-o "></i></li>                                
+                <li><a href="recorrido?action=listas">Agregar Recorrido</a>&nbsp;<i class="fa fa-plus"></i></li>
+                <li><a href="modalidad?action=list">Modalidad</a>&nbsp;<i class="fa fa-clock-o "></i></li>
+                <li><a href="barrio?action=list">Barrio</a>&nbsp;<i class="fa fa-sitemap "></i></li>
+                <li><a href="colegio?action=list">Colegio</a>&nbsp;<i class="fa fa-building-o "></i></li>                
             </ul>
 
             <li  data-toggle="collapse" data-target="#products2" class="collapsed active">
@@ -65,5 +67,6 @@
         </ul>
     </div>
 </div>
+
 
 

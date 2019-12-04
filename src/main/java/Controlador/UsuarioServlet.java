@@ -73,7 +73,7 @@ public class UsuarioServlet extends HttpServlet {
         }else{
             if(rol.equals("Super Administrador")){
                 session.setAttribute("Super", rol);
-                rd = request.getRequestDispatcher("/SA/menu.jsp");
+                rd = request.getRequestDispatcher("/SuperAdministrador/menu.jsp");
                 rd.forward(request, response);
             }
             else if(rol.equals("Apoderado")){

@@ -5,8 +5,8 @@
  */
 package Controlador;
 
-import Dao.BusesDao;
-import Modelo.BusesBean;
+import Dao.BarrioDao;
+import Modelo.BarrioBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,15 +21,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author christian.ramirezusa
  */
-@WebServlet(name = "BusesServlet", urlPatterns = {"/buses"})
-public class BusesServlet extends HttpServlet {
+@WebServlet(name = "BarrioServlet", urlPatterns = {"/barrio"})
+public class BarrioServlet extends HttpServlet {
 
+    
     RequestDispatcher rd;
     String msg;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("Hola");
         String action = request.getParameter("action");
         
         switch(action){
@@ -56,20 +56,17 @@ public class BusesServlet extends HttpServlet {
     protected void add(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        BarrioBean barriobean = new BarrioBean(0);
+        BarrioDao barriodao = new BarrioDao();
         
-        String placa = request.getParameter("txtPlaca");
-        String marca = request.getParameter("txtMarca");
-        String modelo = request.getParameter("txtModelo");
-        int asientos = Integer.parseInt(request.getParameter("txtAsientos"));
+        String barrio = request.getParameter("txtBarrio");
+        String direccion = request.getParameter("txtDireccion");
         
-        bb.setPlaca(placa);
-        bb.setMarca(marca);
-        bb.setModelo(modelo);
-        bb.setAsientos(asientos);
+        
+        
+        barriobean.setBarrio(barrio);        
                 
-        if(bd.add(bb)){
+        if(barriodao.add(barriobean)){
             list(request, response);
         }
     }
@@ -77,14 +74,15 @@ public class BusesServlet extends HttpServlet {
     protected void list(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-        BusesBean bb = new BusesBean(0);
-        BusesDao bd = new BusesDao();
+        BarrioBean barriobean = new BarrioBean(0);
+        BarrioDao barriodao = new BarrioDao();
         
-        List<BusesBean> list = bd.list();
+        List<BarrioBean> list = barriodao.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/SuperAdministrador/buses.jsp");
+        rd = request.getRequestDispatcher("/SuperAdministrador/barrio.jsp");
         rd.forward(request, response);
         
     }
-   
+    
+
 }

@@ -91,7 +91,7 @@ public class ChoferServlet extends HttpServlet {
         
         List<ChoferBean> list = cd.list();
         request.setAttribute("list", list);
-        rd = request.getRequestDispatcher("/chofer.jsp");
+        rd = request.getRequestDispatcher("/SuperAdministrador/chofer.jsp");
         rd.forward(request, response);
         
     }

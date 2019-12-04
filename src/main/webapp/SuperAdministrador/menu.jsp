@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="/head.jsp" %>        
+        <%@include file="../head.jsp" %>        
     </head>
     <body>        
         <div class="row" style="margin-right: 0px;">
@@ -21,7 +21,7 @@
                     <div class="row"  style="margin-right: 0px;">
                         <div class="col-md-3">                            
                         </div>
-                        <div class="col-md-4">                            
+                        <div class="col-md-4">                              
                         </div>
                         <div class="col-md-1">                            
                         </div>                        
@@ -36,7 +36,7 @@
 
         
 
-        <%@include file="/footer.jsp" %>
+        <%@include file="../footer.jsp" %>
 
     </body>
 </html>

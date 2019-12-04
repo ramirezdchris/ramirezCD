@@ -1,5 +1,6 @@
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\BusChoferDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\BusesDao.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\ModalidadDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\UsuarioDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\ApoderadoDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\ChoferDao.java
@@ -7,15 +8,18 @@ C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\jav
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\ViajesBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Conexion\Conexion.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\RecorridoNinoBean.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\ModalidadServlet.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\ColegioBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\AsistenteServlet.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\ChoferServlet.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\BarrioDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\BusesBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\ModalidadBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\BusesChoferBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\AsistenteDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\ApoderadoBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\AsistenteBean.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\BarrioServlet.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\ApoderadoServlet.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\BusesChoferServlet.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\RecorridoBean.java
@@ -23,4 +27,8 @@ C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\jav
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\ChoferBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\UsuariosBean.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Modelo\NinoBean.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\RecorridoDao.java
 C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\UsuarioServlet.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Dao\ColegioDao.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\ColegioServlet.java
+C:\Users\christian.ramirezusa\Documents\NetBeansProjects\TioJuanito\src\main\java\Controlador\RecorridoServlet.java

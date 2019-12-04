@@ -47,7 +47,7 @@ public class BusChoferDao {
     }
 
     public List<BusesChoferBean> list() {
-        sql = "SELECT b.placa AS PlacadeAutoBus,CONCAT(c.nombreChofer,' ', c.apellidoChofer) AS NombreChofer , CONCAT(d.nombreAsistente,' ', d.apellidoAsistente) AS NombreAsistente FROM buseschofer a\n"
+        sql = "SELECT a.idBusesChofer,b.placa AS PlacadeAutoBus,CONCAT(c.nombreChofer,' ', c.apellidoChofer) AS NombreChofer , CONCAT(d.nombreAsistente,' ', d.apellidoAsistente) AS NombreAsistente FROM buseschofer a\n"
                 + "INNER JOIN buses b ON b.idBuses = a.idBuses\n"
                 + "INNER JOIN chofer c ON c.idChofer = a.idChofer\n"
                 + "INNER JOIN asistente d ON d.idAsistente = a.idAsistente;";
@@ -64,10 +64,10 @@ public class BusChoferDao {
                 ChoferBean cb = new ChoferBean();
                 AsistenteBean ab = new AsistenteBean();
                 
-                
-                bb.setPlaca(rs.getString(1));
-                cb.setNombreChofer(rs.getString(2));
-                ab.setNombreAsistente(rs.getString(3));
+                bcb.setIdBusesChofer(rs.getInt(1));
+                bb.setPlaca(rs.getString(2));
+                cb.setNombreChofer(rs.getString(3));
+                ab.setNombreAsistente(rs.getString(4));
                 
                 bcb.setIdBuses(bb);
                 bcb.setIdChofer(cb);

@@ -19,7 +19,7 @@ public class Conexion {
     static String db = "TioJuanito";
     static String user = "root";
     static String pass = "root";
-    static String url = "jdbc:mysql://localhost/"+db+"?useSSL=false";
+    static String url = "jdbc:mysql://localhost/"+db+"?useSSL=false&useUnicode=yes&characterEncoding=UTF-8";
     
     Connection conn = null;
 
