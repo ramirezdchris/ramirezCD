@@ -29,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author christian.ramirezusa
  */
+
 @WebServlet(name = "RecorridoServlet", urlPatterns = {"/recorrido"})
 public class RecorridoServlet extends HttpServlet {
 
@@ -79,33 +80,48 @@ public class RecorridoServlet extends HttpServlet {
         List<BarrioBean> lista2 = barriod.list();
         List<ModalidadBean> lista3 = modad.list();
         List<BusesChoferBean> lista = bcd.list();
+        
+        RecorridoBean recorridob = new RecorridoBean();
+        RecorridoDao recorridod = new RecorridoDao();
+        List<RecorridoBean> tabla = recorridod.list();
 
         request.setAttribute("lista1", lista1);
         request.setAttribute("lista2", lista2);
         request.setAttribute("lista3", lista3);
         request.setAttribute("list", lista);
+        request.setAttribute("tabla", tabla);
+        
+        
 
         rd = request.getRequestDispatcher("/SuperAdministrador/recorridos.jsp");
         rd.forward(request, response);
+        //System.err.println(recorridob.getIdBusesChofer().getIdAsistente().getNombreAsistente());
     }
 
-    /*
+    
     protected void list(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        ColegioBean cb = new ColegioBean();
+        BarrioBean barriob = new BarrioBean();
+        ModalidadBean modab = new ModalidadBean();
         BusesChoferBean bcb = new BusesChoferBean();
+
         BusChoferDao bcd = new BusChoferDao();
-        BusesDao bd = new BusesDao();
-        ChoferDao cd = new ChoferDao();
-        AsistenteDao ad = new AsistenteDao();
+        ColegioDao cd = new ColegioDao();
+        BarrioDao barriod = new BarrioDao();
+        ModalidadDao modad = new ModalidadDao();
         
-        List<BusesChoferBean> lista = bcd.list();
+        RecorridoBean recorridob = new RecorridoBean();
+        RecorridoDao recorridod = new RecorridoDao();
+        
+        List<RecorridoBean> lista = recorridod.list();
                 
         request.setAttribute("list", lista);        
         
-        rd = request.getRequestDispatcher("/SuperAdministrador/BusChofer2.jsp");
+        rd = request.getRequestDispatcher("/SuperAdministrador/recorridos.jsp");
         rd.forward(request, response);                        
     }
-     */
+    
     protected void add(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -136,10 +152,7 @@ public class RecorridoServlet extends HttpServlet {
         recob.setIdBusesChofer(bcb);
                 
         if (recorridod.add(recob)) {
-            msg = "Recorrido insertardo";
-            request.setAttribute("msg", msg);
-            rd = request.getRequestDispatcher("/SuperAdministrador/recorridos.jsp");
-            rd.forward(request, response);
+            listas(request, response);
         }
 
         /*

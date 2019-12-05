@@ -64,28 +64,50 @@
                     </div>
                     <div class="col-md-3">
                         <br><br>
-                        <a href="buseschofer?action=list" class="btn btn-success" style="width: 100%; height: 100px; font-size: 20px; border-radius: 50px; padding-top: 25px; background: #2e353d; color: white;">Listado de equipos<br><i class="fa fa-list"></i></a>
+                        <a href="recorridos?action=list" class="btn btn-success" style="width: 100%; height: 100px; font-size: 20px; border-radius: 50px; padding-top: 25px; background: #2e353d; color: white;">Listado de equipos<br><i class="fa fa-list"></i></a>
                     </div>
                     <div class="col-md-3">
                         <br><br>
                         <a class="btn btn-success" style="width: 100%; height: 100px; font-size: 20px; border-radius: 50px; padding-top: 25px; background: #2e353d; color: white;">Cambiar Equipos<br><i class="fa fa-retweet"></i></a>
                     </div>  
                 </div>
+                        <div class="col-md-3">
+                            <table class="table table-hover">
+                        <thead>
+                        <th>ID</th>
+                        <th>Modalidad</th>
+                        <th>Barrio</th>
+                        <th>Nombre Colegio</th>
+                        <th>Placa</th>
+                        <th>Asientos</th>
+                        <th>Nombre del Chofer</th>
+                        <th>Nombre del Asistente</th>
+                        </thead>
+                        <tbody>                            
+                            <c:forEach items="${tabla}" var="t">
+                                
+                                <tr>
+                                    <td>${t.idRecorrido}</td>
+                                    <td>${t.idModalidad.modalidad}</td>
+                                    <td>${t.idBarrio.barrio}</td>
+                                    <td>${t.idColegio.nombreColegio}</td>
+                                    <td>${t.idBusesChofer.idBuses.placa}</td>
+                                    <td>${t.idBusesChofer.idBuses.asientos}</td>
+                                    <td>${t.idBusesChofer.idChofer.nombreChofer}</td>
+                                    <td>${t.idBusesChofer.idAsistente.nombreAsistente}</td>
+                                    <td>Acciones</td>
+
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
 
 
-        <table>
-            <thead>
 
-            </thead>
-            <tbody>
-                <tr>
-
-                </tr>
-            </tbody>
-        </table>
         <%@include file="/footer.jsp" %>
 
     </body>

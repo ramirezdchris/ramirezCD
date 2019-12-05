@@ -119,10 +119,7 @@ public class BusesChoferServlet extends HttpServlet {
         
         
         if(bcd.add(bcb)){
-            msg = "Equipo insertardo";
-            request.setAttribute("msg", msg);
-            rd = request.getRequestDispatcher("/SuperAdministrador/BusChofer1.jsp");
-            rd.forward(request, response);
+            listas(request, response);
         }
         
         

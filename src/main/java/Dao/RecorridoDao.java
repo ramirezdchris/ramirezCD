@@ -49,7 +49,6 @@ public class RecorridoDao {
             ps.setInt(3, recob.getIdBarrio().getIdBarrio());
             ps.setInt(4, recob.getIdColegio().getIdColegio());
             ps.setInt(5, recob.getIdBusesChofer().getIdBusesChofer());
-
             ps.execute();
             return true;
         } catch (Exception e) {
@@ -59,57 +58,63 @@ public class RecorridoDao {
     }
 
     public List<RecorridoBean> list() {
-        sql = "SELECT b.modalidad, c.barrio, d.nombreColegio,f.placa, f.asientos, g.nombreChofer, h.nombreAsistente FROM recorrido a\n"
+        System.out.println("Entro 0");
+        sql = "SELECT a.idRecorrido, b.modalidad, c.barrio, d.nombreColegio,f.placa, f.asientos, g.nombreChofer, h.nombreAsistente FROM recorrido a\n"
                 + "INNER JOIN modalidad b ON b.idModalidad = a.idModalidad\n"
                 + "INNER JOIN barrio c ON c.idBarrio = a.idBarrio\n"
                 + "INNER JOIN colegio d ON d.idColegio = a.idColegio\n"
                 + "INNER JOIN buseschofer e ON e.idBusesChofer = a.idBusesChofer\n"
-                + "INNER JOIN buses f ON f.idBuses = f.idBuses\n"
-                + "INNER JOIN chofer g ON g.idChofer = g.idChofer\n"
-                + "INNER JOIN asistente h ON h.idAsistente = h.idAsistente";
+                + "INNER JOIN buses f ON f.idBuses = e.idBuses\n"
+                + "INNER JOIN chofer g ON g.idChofer = e.idChofer\n"
+                + "INNER JOIN asistente h ON h.idAsistente = e.idAsistente order by a.idRecorrido ASC;";
 
         try {
             ps = con.conectar().prepareStatement(sql);
             rs = ps.executeQuery();
 
             List<RecorridoBean> list = new ArrayList<>();
-
+            System.out.println("Entro 1");
             while (rs.next()) {
+                System.out.println("Entro 2");
                 RecorridoBean recob = new RecorridoBean();
                 ModalidadBean mdb = new ModalidadBean();
                 BarrioBean barriob = new BarrioBean();
                 ColegioBean cb = new ColegioBean();
-                
+
                 BusesChoferBean bcb = new BusesChoferBean();
                 BusesBean bb = new BusesBean();
                 ChoferBean ccb = new ChoferBean();
                 AsistenteBean aasb = new AsistenteBean();
-                
-                mdb.setModalidad(rs.getString(1));
-                barriob.setBarrio(rs.getString(2));
-                cb.setNombreColegio(rs.getString(3));
-                bb.setPlaca(rs.getString(4));
-                bb.setAsientos(rs.getInt(5));
-                ccb.setNombreChofer(rs.getString(6));
-                aasb.setNombreAsistente(rs.getString(7));
-                
+
+                recob.setIdRecorrido(rs.getInt(1));
+                mdb.setModalidad(rs.getString(2));
+                barriob.setBarrio(rs.getString(3));
+                cb.setNombreColegio(rs.getString(4));
+                bb.setPlaca(rs.getString(5));
+                bb.setAsientos(rs.getInt(6));
+                ccb.setNombreChofer(rs.getString(7));
+                aasb.setNombreAsistente(rs.getString(8));
+
                 bcb.setIdBuses(bb);
                 bcb.setIdChofer(ccb);
                 bcb.setIdAsistente(aasb);
-                               
+
                 recob.setIdModalidad(mdb);
                 recob.setIdBarrio(barriob);
                 recob.setIdColegio(cb);
-                
+
                 recob.setIdBusesChofer(bcb);
-                
-                
-                
+
+                System.out.println(recob.getIdBusesChofer().getIdAsistente().getNombreAsistente());
                 list.add(recob);
             }
             return list;
 
         } catch (Exception e) {
+            RecorridoBean recob = new RecorridoBean();
+            System.out.println(recob.getIdBusesChofer().getIdAsistente().getNombreAsistente());
+            System.out.println("No sirvio");
+            System.out.println("Error en la lista");
             return null;
         }
     }
@@ -118,7 +123,7 @@ public class RecorridoDao {
         sql = "UPDATE recorrido SET idModalidad = ?, idBarrio = ?, idColegio = ?, idBusesChofer = ? WHERE idRecorrido = ?";
 
         try {
-            ps = con.conectar().prepareStatement(sql);            
+            ps = con.conectar().prepareStatement(sql);
             ps.setInt(1, recob.getIdModalidad().getIdModalidad());
             ps.setInt(2, recob.getIdBarrio().getIdBarrio());
             ps.setInt(3, recob.getIdColegio().getIdColegio());
