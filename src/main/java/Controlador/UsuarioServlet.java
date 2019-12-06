@@ -6,6 +6,7 @@
 package Controlador;
 
 import Dao.UsuarioDao;
+import Modelo.ApoderadoBean;
 import Modelo.UsuariosBean;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -62,22 +63,31 @@ public class UsuarioServlet extends HttpServlet {
         System.out.println(user  +pass);
         UsuariosBean ub = new UsuariosBean();
         UsuarioDao ud = new UsuarioDao();
+        ApoderadoBean ap = new ApoderadoBean();
         
-        rol = ud.login(user, pass);
         
-        if (rol == "null") {
+        ub=ud.login(user, pass);
+        //System.out.println("Aquien el servlet: " +ub.getIdApoderado());
+        //System.out.println("-----------------" +nombre);
+        
+        if (ub.getRol().equals("null")) {
             session.setAttribute("rol", "null");
             request.setAttribute("msg", "Credenciales Invalidas");
             rd = request.getRequestDispatcher("/login.jsp");
             rd.forward(request, response);
         }else{
-            if(rol.equals("Super Administrador")){
-                session.setAttribute("Super", rol);
+            //System.out.println("Aqui en el servlet: " +ub.getIdApoderado().getNombreApoderado());
+            if(ub.getRol().equals("Super Administrador")){
+                session.setAttribute("Super", ub.getRol());
+                
                 rd = request.getRequestDispatcher("/SuperAdministrador/menu.jsp");
                 rd.forward(request, response);
             }
-            else if(rol.equals("Apoderado")){
-                session.setAttribute("Admin", rol);
+            else if(ub.getRol().equals("Apoderado")){
+                //System.out.println("Aqui en el servlet: " +ub.getIdApoderado().getNombreApoderado());
+                session.setAttribute("Admin", ub);                
+                
+                session.setAttribute("Nombre", ub.getIdApoderado().getNombreApoderado());
                 rd = request.getRequestDispatcher("/Apoderado/menu.jsp");
                 rd.forward(request, response);
             }

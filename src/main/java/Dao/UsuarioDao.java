@@ -6,6 +6,7 @@
 package Dao;
 
 import Conexion.Conexion;
+import Modelo.ApoderadoBean;
 import Modelo.UsuariosBean;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,28 +16,36 @@ import java.sql.ResultSet;
  * @author christian.ramirezusa
  */
 public class UsuarioDao {
+
     Conexion con = new Conexion();
-    
+
     PreparedStatement ps;
     ResultSet rs;
-    
+
     String sql;
-    
-    public String login(String user, String pass){
-        sql = "SELECT rol FROM usuarios WHERE username = ? AND clave = ?";
+
+    public UsuariosBean login(String user, String pass) {
+        sql = "SELECT a.rol, b.nombreApoderado FROM usuarios a\n"
+                + "LEFT JOIN Apoderado b ON b.idApoderado = a.idApoderado WHERE username = ? AND clave = ?";
         try {
-            ps = con.conectar().prepareStatement(sql);            
+            ps = con.conectar().prepareStatement(sql);
             ps.setString(1, user);
             ps.setString(2, pass);
             rs = ps.executeQuery();
-            String rol = "null";
-            while(rs.next()){
-                UsuariosBean ub = new UsuariosBean();                
+            //String rol = "null";
+            UsuariosBean ub = new UsuariosBean();
+            while (rs.next()) {
+                ub = new UsuariosBean();
+                ApoderadoBean ap = new ApoderadoBean();
                 ub.setRol(rs.getString(1));
-                rol = ub.getRol();
-                return rol;
+                ap.setNombreApoderado(rs.getString(2));
+                ub.setIdApoderado(ap);
+                System.out.println("Aqui en el dao 1: " +ub.getRol());
+                System.out.println("Aqui en el dao 2: " +ub.getIdApoderado().getNombreApoderado());
+                //rol = ub.getRol();
+                return ub;
             }
-            return rol;
+            return ub;
         } catch (Exception e) {
             return null;
         }

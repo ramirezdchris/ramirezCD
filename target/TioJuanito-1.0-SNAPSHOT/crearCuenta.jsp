@@ -12,12 +12,22 @@
         <title>JSP Page</title>
         <%@include file="head.jsp" %>
     </head>
-    <body>        
+
+    <body>
+        <style>
+            h2{
+                font-family: 'Fredoka One', cursive;                
+            }
+            label{
+                font-family: 'Fredoka One', cursive;                
+            }
+            
+        </style>        
         <div class="container-fluid"><br>
             <img src="img/fondoo.jpg" id="fondo">
             <div class="row">
-                <div class="col-md-4">
-                    <h3>Registro de cuenta</h3>
+                <div class="col-md-4" style="text-align: center; padding-top: 20px;">
+                    <h2>Registro de cuenta </h2>
                 </div>
                 <div class="col-md-6">
                     <img src="img/busRegistro.png" style="height: 100px; width: 200px;"/>

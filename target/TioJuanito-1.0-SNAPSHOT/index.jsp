@@ -9,14 +9,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JSP Page</title>        
         <%@include file="head.jsp" %>
+        <style>
+            h2{
+                font-family: 'Fredoka One', cursive;                
+            }
+            p{
+                font-family: 'Lusitana', serif;                
+            }
+        </style>
     </head>
     <body>
-        <img src="img/fondo.jpg" alt="fondo" id="fondo"/>
-        <div class="container-fluid">
+        <img src="img/fondo1.jpg" alt="fondo" id="fondo" style="opacity: 0.9"/>
+        <div class="container-fluid" style="margin-left: 100px;">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" style="background-color: white; border: 5px #000 solid">
                     <h2>
                         Tio Juanito Transporte
                     </h2>
@@ -27,25 +35,24 @@
                 <div class="col-md-4">
                     <ul class="nav nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="crearCuenta.jsp">Crear Cuenta</a>
+                            <a class="btn btn-danger" href="crearCuenta.jsp" style="background-color: yellow; color: black; font-family: 'Fredoka One', cursive;">Crear Cuenta</a>
                         </li>
                         <li class="nav-item">
-
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.jsp">Iniciar Sesion</a>
+                            <a class="btn btn-danger" href="login.jsp" style="background-color: yellow; color: black; font-family: 'Fredoka One', cursive;">Iniciar Sesion</a>
                         </li>                        
                     </ul>
                 </div>
-            </div>
-            <br>
+            </div>           
             <div class="row">
                 <div class="col-md-6">                    
                 </div>
                 <div class="col-md-6">
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 10px;">
                 <div class="col-md-5">
                     <div class="carousel slide" id="carousel-921630">
                         <ol class="carousel-indicators">
@@ -56,25 +63,25 @@
                             <li data-slide-to="2" data-target="#carousel-921630">
                             </li>
                         </ol>
-                        <div class="carousel-inner" style="border-radius: 10px; border: 1px solid black">
+                        <div class="carousel-inner" style="border-radius: 10px; border: 1px solid black; border-radius: 15px;">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" alt="Carousel Bootstrap First" 
                                      src="http://www.misartransporte.com/portal/images/carousel/escolar_1280_slide.png" 
-                                     style="width: 50px; height: 300px;" />
+                                     style="width: 50px; height: 250px;" />
                                 <div class="carousel-caption">                                    
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100" alt="Carousel Bootstrap Second" 
                                      src="https://d4.panamaamerica.com.pa/sites/default/files/field/image/colegiales.jpg" 
-                                     style="width: 50px; height: 300px;" />
+                                     style="width: 50px; height: 250px;" />
                                 <div class="carousel-caption">                                    
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100" alt="Carousel Bootstrap Third" 
                                      src="https://images.evisos.cl/2009/11/21/toyota-hiace-escolar-antildeo-1998_4ac773226_3.jpg" 
-                                     style="width: 50px; height: 300px;" />
+                                     style="width: 50px; height: 250px;" />
                                 <div class="carousel-caption">                                    
                                 </div>
                             </div>
@@ -85,7 +92,7 @@
                             <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4"  style="background-color: white;border: 5px #000 solid;border-radius: 15px;">
                     <h2>
                         Mision
                     </h2>
@@ -99,9 +106,9 @@
                     </p>                    
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
+            
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-4" style="background-color: white; border: 5px #000 solid; border-radius: 15px;">
                     <h2>
                         Vision
                     </h2>
@@ -122,7 +129,7 @@
                             <li data-slide-to="2" data-target="#carousel-526996">
                             </li>
                         </ol>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" style="border-radius: 10px; border: 1px solid black">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" alt="Carousel Bootstrap First" 
                                      src="https://d4.panamaamerica.com.pa/sites/default/files/imagenes/2015/03/02/ttwe.jpg" 
