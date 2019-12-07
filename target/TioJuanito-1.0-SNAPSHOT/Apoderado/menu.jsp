@@ -28,7 +28,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6" style="text-align: right; margin-top: 40px;">
-                    <h2>Bienvenido/a ${sessionScope.Nombre}</h2>
+                    <h2>Bienvenido/a ${sessionScope.Nombre} &nbsp; ${sessionScope.Id}</h2>
                     <input type="text" value="${sessionScope.Nombre}" hidden/>
                 </div>
                 <div class="col-6" style="text-align: right; margin-top: 10px;">

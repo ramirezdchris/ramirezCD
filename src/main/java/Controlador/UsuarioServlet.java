@@ -68,9 +68,9 @@ public class UsuarioServlet extends HttpServlet {
         
         ub=ud.login(user, pass);
         //System.out.println("Aquien el servlet: " +ub.getIdApoderado());
-        //System.out.println("-----------------" +nombre);
+        //System.out.println("-----------------" +nombre);                
         
-        if (ub.getRol().equals("null")) {
+        if (ub.getRol() == null) {
             session.setAttribute("rol", "null");
             request.setAttribute("msg", "Credenciales Invalidas");
             rd = request.getRequestDispatcher("/login.jsp");
@@ -86,7 +86,7 @@ public class UsuarioServlet extends HttpServlet {
             else if(ub.getRol().equals("Apoderado")){
                 //System.out.println("Aqui en el servlet: " +ub.getIdApoderado().getNombreApoderado());
                 session.setAttribute("Admin", ub);                
-                
+                session.setAttribute("Id", ub.getIdApoderado().getIdApoderado());
                 session.setAttribute("Nombre", ub.getIdApoderado().getNombreApoderado());
                 rd = request.getRequestDispatcher("/Apoderado/menu.jsp");
                 rd.forward(request, response);
