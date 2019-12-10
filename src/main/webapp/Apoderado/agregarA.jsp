@@ -14,31 +14,38 @@
     </head>
     <body>
         <%@include file="panelA.jsp" %> 
+        <br><br><br><br><br><br>
+        <form>
+            <div class="container" style="border: 5px dotted black ; border-radius: 50px;">
+                <br><br><br>
+                <div class="row">
 
-        <div class="container" style="border: 1px black solid;">
-            <br><br><br>
-            <div class="row">
-                <div class="col-md-6">
-                    <input value="${sessionScope.Id}" hidden="">
-                    <input type="text" name="txtNombre" class="form-control">  
-                </div>
                     <div class="col-md-6">
-                        <input type="text" name="txtApellido" class="form-control">  
-                    <center><button class="btn-block" >Ingresar</button></center>
+                        <label class="badge-info">Nombre del Niño</label>
+                        <input value="${sessionScope.Id}" hidden="">
+                        <input type="text" name="txtNombre" class="form-control" placeholder="Ingresar Nombre">  
+                    </div>
+                    <div class="col-md-6">
+                        <label class="badge-info">Apellido del niño</label>
+                        <input type="text" name="txtApellido" class="form-control" placeholder="Ingresar Apellido">  
+
+                    </div>
+                </div>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <button class="btn btn-block" >Ingresar</button>
                     </div>
 
-                <form>
+                </div>
 
-
-
-                    
-                </form>
+                <br>
             </div>
-        </div>
 
-
-
-
+        </form>
+             
+        
+        
         <%@include file="../footer.jsp" %>
     </body>
 </html>

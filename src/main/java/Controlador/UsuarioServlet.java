@@ -100,7 +100,7 @@ public class UsuarioServlet extends HttpServlet {
         
        if(session != null){
            session.invalidate();
-           rd = request.getRequestDispatcher("login.jsp");
+           rd = request.getRequestDispatcher("TioJuanito/login.jsp");
            rd.forward(request, response);
        }
     }
