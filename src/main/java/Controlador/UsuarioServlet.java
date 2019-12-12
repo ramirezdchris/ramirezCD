@@ -80,7 +80,7 @@ public class UsuarioServlet extends HttpServlet {
             if(ub.getRol().equals("Super Administrador")){
                 session.setAttribute("Super", ub.getRol());
                 
-                rd = request.getRequestDispatcher("/SuperAdministrador/menu.jsp");
+                rd = request.getRequestDispatcher("/menuSA.jsp");
                 rd.forward(request, response);
             }
             else if(ub.getRol().equals("Apoderado")){
@@ -88,7 +88,7 @@ public class UsuarioServlet extends HttpServlet {
                 session.setAttribute("Admin", ub);                
                 session.setAttribute("Id", ub.getIdApoderado().getIdApoderado());
                 session.setAttribute("Nombre", ub.getIdApoderado().getNombreApoderado());
-                rd = request.getRequestDispatcher("/Apoderado/menu.jsp");
+                rd = request.getRequestDispatcher("/menuA.jsp");
                 rd.forward(request, response);
             }
         }       

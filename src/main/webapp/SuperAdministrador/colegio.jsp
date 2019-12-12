@@ -61,7 +61,7 @@
         </div>        
         <div class="row" style="margin-right: 0px;">
             <div class="col-md-3" style="padding-right: 0px;">
-                <div style=""><%@include file="panel.jsp" %></div>
+                <div style=""><%@include file="../panelSA.jsp" %></div>
             </div>
             <div class="col-md-9" style="margin-right: 0; padding-right: 0px;">
                 <div class="row"  style="margin-right: 0px;">

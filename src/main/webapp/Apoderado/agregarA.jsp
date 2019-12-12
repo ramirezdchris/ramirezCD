@@ -13,7 +13,7 @@
         <%@include file="../head.jsp" %>
     </head>
     <body>
-        <%@include file="panelA.jsp" %> 
+        <%@include file="../panelA.jsp" %> 
         <br><br><br><br><br><br>
         <form>
             <div class="container" style="border: 5px dotted black ; border-radius: 50px;">

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="../head.jsp" %>
+        <%@include file="head.jsp" %>
         <style>
             img{
                 height: 250px;
@@ -22,6 +22,7 @@
             }
             
         </style>
+        
     </head>
     <body>
         <img src="https://fondosdepantallaymuchomas.files.wordpress.com/2010/09/415.jpg" id="fondo" style="opacity: 0.7;">
@@ -59,6 +60,6 @@
         </div>
 
     
-    <%@include file="../footer.jsp" %>
+    <%@include file="footer.jsp" %>
 </body>
 </html>

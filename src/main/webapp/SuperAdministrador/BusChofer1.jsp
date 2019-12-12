@@ -11,12 +11,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <%@include file="/head.jsp" %>        
+        <%@include file="../head.jsp" %>        
     </head>
     <body>        
         <div class="row" style="margin-right: 0px;">
             <div class="col-md-3" style="padding-right: 0px;">
-                <div style=""><%@include file="panel.jsp" %></div>
+                <div style=""><%@include file="../panelSA.jsp" %></div>
             </div>
             <div class="col-md-9" style="margin-right: 0; padding-right: 0px;">
                 <div class="row"  style="margin-right: 0px;">
@@ -73,7 +73,7 @@
 
 
 
-        <%@include file="/footer.jsp" %>
+        <%@include file="../footer.jsp" %>
 
     </body>
 </html>

@@ -32,6 +32,7 @@ public class ApoderadoServlet extends HttpServlet {
         
         switch(action){
             case "add": add(request, response); break;
+            case "menu": menu(request, response); break;
             default: System.out.println("No entreo a ningun metodo");
         }
     }
@@ -77,5 +78,16 @@ public class ApoderadoServlet extends HttpServlet {
         }
                 
     }
+    
+    
+    protected void menu(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+                                
+            rd = request.getRequestDispatcher("/Apoderado/menu.jsp");
+            rd.forward(request, response);                        
+    }
+    
+    
+    
 
 }

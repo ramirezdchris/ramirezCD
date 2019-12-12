@@ -55,10 +55,10 @@
         <label style="font-size: 15px;">${sessionScope.Nombre}</label>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="menu.jsp" style="padding: 0px 0px 0px 0px;">Inicio&nbsp;<i class="fa fa-home"></i></a>        
+        <a class="nav-link active" href="../menuA.jsp" style="padding: 0px 0px 0px 0px;">Inicio&nbsp;<i class="fa fa-home"></i></a>        
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="agregarA.jsp" style="padding: 0px 0px 0px 0px;">Niños&nbsp;<i class="fa fa-child"></i></a>        
+        <a class="nav-link" href="../Apoderado/agregarA.jsp" style="padding: 0px 0px 0px 0px;">Niños&nbsp;<i class="fa fa-child"></i></a>        
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" style="padding: 0px 0px 0px 0px;">Recorridos Disponibles&nbsp;<i class="fa fa-map-marker"></i></a>
@@ -95,8 +95,6 @@
 </style>
 
 <img id="corredor2" src="https://images.vexels.com/media/users/3/134428/isolated/preview/0952976ee563b42c1decb93327bbed76-autob-s-escolar-desde-el-lado-by-vexels.png" onload='setInterval("correr()", 90)'/>        
-
-
 
 <script>
     var corredor1 = document.getElementById("corredor1");
