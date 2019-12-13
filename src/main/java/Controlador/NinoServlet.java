@@ -6,14 +6,18 @@
 package Controlador;
 
 import Dao.NinoDao;
+import Modelo.ApoderadoBean;
 import Modelo.NinoBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -22,15 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "NinoServlet", urlPatterns = {"/nino"})
 public class NinoServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    RequestDispatcher rd;
+    String msg;
+    //int apoderado;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -61,13 +60,18 @@ public class NinoServlet extends HttpServlet {
             
         NinoBean ninobean = new NinoBean(0);
         NinoDao ninodao = new NinoDao();
+        ApoderadoBean apb = new ApoderadoBean();
         
-        String barrio = request.getParameter("txtBarrio");
-        String direccion = request.getParameter("txtDireccion");
+        String nombre = request.getParameter("txtNombre");
+        String apellido = request.getParameter("txtApellido");
+        int apoderado = Integer.parseInt(request.getParameter("txtPadre"));
         
         
         
-        //ninobean.setBarrio(barrio);        
+        ninobean.setNombreNino(nombre);
+        ninobean.setApellidoNino(apellido);
+        apb.setIdApoderado(apoderado);
+        ninobean.setIdApoderado(apb);
                 
         if(ninodao.add(ninobean)){
             list(request, response);
@@ -79,11 +83,13 @@ public class NinoServlet extends HttpServlet {
             
         NinoBean ninobean = new NinoBean(0);
         NinoDao ninodao = new NinoDao();
+                
         
-//        List<NinoBean> list = ninodao.list();
-//        request.setAttribute("list", list);
-//        rd = request.getRequestDispatcher("/SuperAdministrador/barrio.jsp");
-//        rd.forward(request, response);
+        int apoderado = Integer.parseInt(request.getParameter("apoderado"));
+        List<NinoBean> list = ninodao.list(apoderado);
+        request.setAttribute("list", list);
+        rd = request.getRequestDispatcher("Apoderado/agregarA.jsp");
+        rd.forward(request, response);
         
     }
     

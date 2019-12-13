@@ -55,10 +55,10 @@
         <label style="font-size: 15px;">${sessionScope.Nombre}</label>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="../menuA.jsp" style="padding: 0px 0px 0px 0px;">Inicio&nbsp;<i class="fa fa-home"></i></a>        
+        <a class="nav-link active" href="menuA.jsp" style="padding: 0px 0px 0px 0px;">Inicio&nbsp;<i class="fa fa-home"></i></a>        
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../Apoderado/agregarA.jsp" style="padding: 0px 0px 0px 0px;">Niños&nbsp;<i class="fa fa-child"></i></a>        
+        <a class="nav-link" href="nino?action=list&apoderado=${sessionScope.Id}" style="padding: 0px 0px 0px 0px;">Niños&nbsp;<i class="fa fa-child"></i></a>        
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" style="padding: 0px 0px 0px 0px;">Recorridos Disponibles&nbsp;<i class="fa fa-map-marker"></i></a>

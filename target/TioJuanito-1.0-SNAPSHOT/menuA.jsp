@@ -47,7 +47,7 @@
 
                 <div class="col-md-3" style="margin: 0px 0px 0px 0px;">
                     <!--<i class="fa fa-child"></i>-->
-                    <a href="Apoderado/agregarA.jsp"><img src="https://cdn.pixabay.com/photo/2016/04/01/09/18/boy-1299263_960_720.png"></a>
+                    <a href="nino?action=list&apoderado=${sessionScope.Id}"><img src="https://cdn.pixabay.com/photo/2016/04/01/09/18/boy-1299263_960_720.png"></a>
                     <h3>Agregar Niños</h3>
                 </div>
                 <div class="col-md-3">

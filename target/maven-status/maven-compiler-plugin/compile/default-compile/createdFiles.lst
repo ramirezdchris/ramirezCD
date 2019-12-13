@@ -22,6 +22,8 @@ Controlador\ColegioServlet.class
 Dao\BarrioDao.class
 Modelo\ChoferBean.class
 Controlador\ModalidadServlet.class
+Controlador\NinoServlet.class
+Dao\NinoDao.class
 Modelo\AsistenteBean.class
 Controlador\ApoderadoServlet.class
 Dao\BusChoferDao.class

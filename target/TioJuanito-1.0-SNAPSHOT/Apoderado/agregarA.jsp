@@ -4,6 +4,7 @@
     Author     : christian.ramirezusa
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,14 +16,13 @@
     <body>
         <%@include file="../panelA.jsp" %> 
         <br><br><br><br><br><br>
-        <form>
+        <form action="nino?action=add&apoderado=${sessionScope.Id}" method="POST">
             <div class="container" style="border: 5px dotted black ; border-radius: 50px;">
                 <br><br><br>
-                <div class="row">
-
+                <div class="row">                    
                     <div class="col-md-6">
                         <label class="badge-info">Nombre del Niño</label>
-                        <input value="${sessionScope.Id}" hidden="">
+                        <input value="${sessionScope.Id}" hidden="" name="txtPadre">
                         <input type="text" name="txtNombre" class="form-control" placeholder="Ingresar Nombre">  
                     </div>
                     <div class="col-md-6">
@@ -34,18 +34,47 @@
                 <br>
                 <div class="row justify-content-center">
                     <div class="col-md-4">
-                        <button class="btn btn-block" >Ingresar</button>
+                        <button class="btn btn-block" >Insertar</button>
                     </div>
 
                 </div>
-
                 <br>
+
+
+            </div>
+            <br>
+            <br><br><br><br>
+            <br><br><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3"></div>
+
+                    <div class="col-md-6">
+                        <table class="table table-hover">
+                            <thead>
+                            <th>Nombre</th>
+                            <th>Apellido </th>
+                            <th>Encargado</th>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${list}" var="v">
+                                    <tr>
+                                        <td>${v.nombreNino}</td>
+                                        <td>${v.apellidoNino}</td>
+                                        <td>${v.idApoderado.nombreApoderado}</td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
             </div>
 
+
         </form>
-             
-        
-        
+
+
         <%@include file="../footer.jsp" %>
     </body>
 </html>
