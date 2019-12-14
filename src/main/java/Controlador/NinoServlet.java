@@ -6,8 +6,10 @@
 package Controlador;
 
 import Dao.NinoDao;
+import Dao.RecorridoDao;
 import Modelo.ApoderadoBean;
 import Modelo.NinoBean;
+import Modelo.RecorridoBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -37,6 +39,7 @@ public class NinoServlet extends HttpServlet {
         switch(action){
             case "add": add(request, response); break;
             case "list": list(request, response); break;
+            case "list2": listAddRecoriddo(request, response); break;
             default: System.err.println("No entro a ningun metodo"); break;
         }
     }
@@ -89,6 +92,26 @@ public class NinoServlet extends HttpServlet {
         List<NinoBean> list = ninodao.list(apoderado);
         request.setAttribute("list", list);
         rd = request.getRequestDispatcher("Apoderado/agregarA.jsp");
+        rd.forward(request, response);
+        
+    }
+    
+    protected void listAddRecoriddo(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            
+        NinoBean ninobean = new NinoBean(0);
+        NinoDao ninodao = new NinoDao();
+        
+        RecorridoBean recob = new RecorridoBean();
+        RecorridoDao recod = new RecorridoDao();
+        
+        
+        int apoderado = Integer.parseInt(request.getParameter("apoderado"));
+        List<NinoBean> list = ninodao.list(apoderado);
+        List<RecorridoBean> list2 = recod.list();
+        request.setAttribute("list", list);
+        request.setAttribute("list2", list2);
+        rd = request.getRequestDispatcher("Apoderado/agregarRecorrido.jsp");
         rd.forward(request, response);
         
     }

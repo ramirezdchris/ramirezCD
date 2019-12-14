@@ -37,9 +37,7 @@
 
         </style>
     </head>
-    <body>
-        <img id="corredor1" src="https://images.vexels.com/media/users/3/134428/isolated/preview/0952976ee563b42c1decb93327bbed76-autob-s-escolar-desde-el-lado-by-vexels.png" width="300" height="300"  onload='setInterval("correr()", 90)'>
-        <img id="corredor2" src="https://images.vexels.com/media/users/3/134428/isolated/preview/0952976ee563b42c1decb93327bbed76-autob-s-escolar-desde-el-lado-by-vexels.png" onload='setInterval("correr()", 90)'/>        
+    <body>        
         <%@include file="../panelA.jsp" %>
         
         <br><br><br><br><br><br>
@@ -48,14 +46,22 @@
                 <br><br><br>
                 <div class="row">                    
                     <div class="col-md-6">
-                        <label class="badge-info">Nombre del Niño</label>
-                        <input value="${sessionScope.Id}" hidden="" name="txtPadre">
-                        <input type="text" name="txtNombre" class="form-control" placeholder="Ingresar Nombre">  
+                        <select>
+                            <c:forEach items="${list2}" var="v">
+                                <option value="${v.idRecorrido}">
+                                    ${v.idModalidad.modalidad} - ${v.idBarrio.barrio} - ${v.idColegio.nombreColegio}
+                            </option>
+                            </c:forEach>
+                        </select>                        
                     </div>
                     <div class="col-md-6">
-                        <label class="badge-info">Apellido del niño</label>
-                        <input type="text" name="txtApellido" class="form-control" placeholder="Ingresar Apellido">  
-
+                        <select>
+                            <c:forEach items="${list}" var="v">
+                                <option value="${v.idNino}">
+                                ${v.nombreNino} - ${v.apellidoNino}
+                            </option>
+                            </c:forEach>
+                        </select>
                     </div>
                 </div>
                 <br>

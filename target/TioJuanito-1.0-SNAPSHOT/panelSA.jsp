@@ -12,7 +12,7 @@
 
         <ul id="menu-content" class="menu-content collapse out">
             <li>
-                <a href="#">
+                <a href="menuSA.jsp">
                     <i class="fa fa-dashboard fa-lg"></i>Inicio
                 </a>
             </li>
@@ -31,17 +31,17 @@
                 <a href="#"><i class="fa fa-edit fa-lg"></i>Administraci&oacute;n de viajes<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="products2">
-                <li><a href="pelicula?action=mostrar">Control</a>&nbsp;<i class="fa fa-arrows "></i></li>
-                <li><a href="pelicula?action=mostrar">Fecha</a>&nbsp;<i class="fa fa-calendar-times-o"></i></li>
+                <li><a href="#">Control</a>&nbsp;<i class="fa fa-arrows "></i></li>
+                <li><a href="#">Fecha</a>&nbsp;<i class="fa fa-calendar-times-o"></i></li>
             </ul>
             
             <li  data-toggle="collapse" data-target="#products3" class="collapsed active">
                 <a href="#"><i class="fa fa-edit fa-lg"></i>Administraci&oacute;n de Equipo de Viajes<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="products3">
-                <li><a href="pelicula?action=mostrar">Equipos</a>&nbsp;<i class="fa fa-list"></i></li>
+                <li><a href="#">Equipos</a>&nbsp;<i class="fa fa-list"></i></li>
                 <li><a href="buseschofer?action=listas">Añadir equipos</a>&nbsp;<i class="fa fa-plus-circle"></i></li>
-                <li><a href="pelicula?action=mostrar">Editar Equipos</a>&nbsp;<i class="fa fa-pencil "></i></li>                
+                <li><a href="#">Editar Equipos</a>&nbsp;<i class="fa fa-pencil "></i></li>                
             </ul>
 
             <li data-toggle="collapse" data-target="#service" class="collapsed">
